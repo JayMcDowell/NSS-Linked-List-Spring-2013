@@ -9,12 +9,12 @@ class LinkedList
   def add_item(payload)
     next_item = LinkedListItem.new(payload)
   if @first_item.nil?
-     @first_item = next_item
+    @first_item = next_item
   else
     final_item = @first_item
-  while !final_item.last?
-    final_item = final_item.next_list_item
-  end
+    while !final_item.last?
+      final_item = final_item.next_list_item
+    end
     final_item.next_list_item = next_item
   end
 end
@@ -24,10 +24,10 @@ end
     item = @first_item
     while i < n
     raise IndexError if item.nil?
-      item = item.next_list_item
-    i += 1
+     item = item.next_list_item
+     i += 1
     end
-      item.payload
+    item.payload
   end
 
 
@@ -42,10 +42,10 @@ end
 
   def size
     item = @first_item
-    return 0 if item.nil?
+      return 0 if item.nil?
     i = 1
-    while !item.last?
-      item = item.next_list_item
+      while !item.last?
+    item = item.next_list_item
     i += 1
     end
     i
@@ -61,7 +61,6 @@ end
         items << item.payload
         item = item.next_list_item
       end
-
       output = "| "
       output += items.join(", ")
       output += " |"

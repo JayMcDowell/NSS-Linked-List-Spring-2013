@@ -41,7 +41,7 @@ end
   end
 
   def size
-    item = @first_item
+    item = first_item
     return 0 if item.nil?
     i = 1
     while !item.last?
@@ -61,7 +61,6 @@ end
         items << item.payload
         item = item.next_list_item
       end
-
       output = "| "
       output += items.join(", ")
       output += " |"
@@ -71,11 +70,11 @@ end
   # ========= Bonus ========== #
 
   def [](payload)
-   
+
   end
 
   def []=(n, payload)
-  
+
   end
 
   def remove(n)

@@ -5,7 +5,7 @@ attr_reader :next_list_item
   def initialize( payload )
   	@payload = payload
   end
-
+  
   def next_list_item= (linked_list_item)
   if linked_list_item == self
   raise ArgumentError, "Item cannot be linked to itself" 
