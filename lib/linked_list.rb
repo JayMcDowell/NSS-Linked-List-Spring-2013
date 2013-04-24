@@ -19,7 +19,7 @@ class LinkedList
   end
 end
 
-  def get(n)
+def get(n)
     i = 0
     item = @first_item
     while i < n
@@ -28,19 +28,19 @@ end
     i += 1
     end
       item.payload
-  end
+end
 
 
-  def last
+def last
     item = @first_item
     return nil if item.nil?
     while !item.last?
       item = item.next_list_item
     end
       item.payload
-  end
+end
 
-  def size
+def size
     item = @first_item
     return 0 if item.nil?
     i = 1
@@ -49,9 +49,9 @@ end
     i += 1
     end
     i
-  end
+end
 
-  def to_s
+def to_s
     if size == 0
       "| |"
     else
@@ -61,21 +61,36 @@ end
         items << item.payload
         item = item.next_list_item
       end
-
       output = "| "
       output += items.join(", ")
       output += " |"
     end
+end
+
+def indexOf(container)
+  i = 0
+  item = @first_item
+    return nil if item.nil?
+  if item.payload == container
+    return i
   end
+  while !item.last?
+    item = item.next_list_item
+    if item.payload == container
+      return i + 1
+    end
+    i += 1
+  end
+end
 
   # ========= Bonus ========== #
 
   def [](payload)
-   
+
   end
 
   def []=(n, payload)
-  
+
   end
 
   def remove(n)
