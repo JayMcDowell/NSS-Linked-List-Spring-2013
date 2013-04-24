@@ -70,16 +70,16 @@ end
 def indexOf(container)
   i = 0
   item = @first_item
-    return nil if item.nil?
+  return nil if item.nil?
   if item.payload == container
     return i
   end
   while !item.last?
     item = item.next_list_item
-    if item.payload == container
-      return i + 1
-    end
     i += 1
+    if item.payload == container
+      return i
+    end
   end
 end
 
